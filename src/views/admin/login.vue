@@ -12,7 +12,7 @@
                 <el-input v-model="adminForm.password" style="width:80%" placeholder="密码"></el-input>
             </el-form-item>
             <el-form-item>
-                <el-button type="primary" @click="onSubmit" style="width:70%">登录</el-button>
+                <el-button type="primary" @click="adminLogin()" style="width:70%">登录</el-button>
             </el-form-item>
             <el-form-item>
                 <el-button type="default" @click="onSubmit" style="width:70%">返回</el-button>
@@ -24,6 +24,7 @@
 </template>
 
 <script>
+import router from '../../router/index'
 import axios from 'axios'
 import HeadTop from '../../components/header'
 
@@ -31,6 +32,7 @@ export default {
   name: 'list',
   data () {
     return {
+      API_HOST: window.API_HOST,
       adminForm:[]
     }
   },
@@ -38,14 +40,27 @@ export default {
     HeadTop,
   },
   methods: {
-    getHello:function() {
-      axios.get('http://localhost:8080/BookStoreOnline/user/hello')
-      .then(function(res) {
-        console.log(res)
+    adminLogin:function(){
+      if(!this.adminForm.adminname || !this.adminForm.password){
+        this.$message.warning('请填写完整的登录信息')
+        return false
+      }
+      axios.post(API_HOST+'admin/adminlogin.action',{
+        adminname:this.adminForm.adminname,
+        password:this.adminForm.password
       })
-      .catch(function (response){
-        console.log(response);//发生错误时执行的代码
-      });
+      .then((res) => {
+        if(res.data){
+          this.$message.success("登陆成功")
+          sessionStorage.setItem('adminName',res.data.adminname)
+          this.$router.push({path:'/admin/index'})
+        }else{
+          this.$message.error("用户名或密码错误")
+        }
+      })
+      .catch((err) => {
+        $this.$message.error(err)
+      })
     }
   },
 }

@@ -19,65 +19,67 @@
             class="el-menu-vertical-demo"
             @open="handleOpen"
             @close="handleClose">
-            <el-menu-item index="1">
-              <i class="el-icon-menu"></i>
-              <span slot="title">导航一</span>
-            </el-menu-item>
+            <a href="#/book?type=">
+              <el-menu-item index="1">
+                <i class="el-icon-menu"></i>
+                <span slot="title">文学</span>
+              </el-menu-item>
+            </a>
             <el-menu-item index="2">
               <i class="el-icon-menu"></i>
-              <span slot="title">导航二</span>
+              <span slot="title">小说</span>
             </el-menu-item>
             <el-menu-item index="3">
               <i class="el-icon-document"></i>
-              <span slot="title">导航三</span>
+              <span slot="title">传记</span>
             </el-menu-item>
             <el-menu-item index="4">
               <i class="el-icon-setting"></i>
-              <span slot="title">导航四</span>
+              <span slot="title">历史</span>
             </el-menu-item>
             <el-menu-item index="4">
               <i class="el-icon-setting"></i>
-              <span slot="title">导航四</span>
+              <span slot="title">科普</span>
             </el-menu-item>
             <el-menu-item index="4">
               <i class="el-icon-setting"></i>
-              <span slot="title">导航四</span>
+              <span slot="title">经济</span>
             </el-menu-item>
             <el-menu-item index="4">
               <i class="el-icon-setting"></i>
-              <span slot="title">导航四</span>
+              <span slot="title">法律</span>
             </el-menu-item>
             <el-menu-item index="4">
               <i class="el-icon-setting"></i>
-              <span slot="title">导航四</span>
+              <span slot="title">军事</span>
             </el-menu-item>
             <el-menu-item index="4">
               <i class="el-icon-setting"></i>
-              <span slot="title">导航四</span>
+              <span slot="title">医学</span>
             </el-menu-item>
             <el-menu-item index="4">
               <i class="el-icon-setting"></i>
-              <span slot="title">导航四</span>
+              <span slot="title">计算机</span>
             </el-menu-item>
             <el-menu-item index="4">
               <i class="el-icon-setting"></i>
-              <span slot="title">导航四</span>
+              <span slot="title">工业</span>
             </el-menu-item>
             <el-menu-item index="4">
               <i class="el-icon-setting"></i>
-              <span slot="title">导航四</span>
+              <span slot="title">农林</span>
             </el-menu-item>
             <el-menu-item index="4">
               <i class="el-icon-setting"></i>
-              <span slot="title">导航四</span>
+              <span slot="title">哲学</span>
             </el-menu-item>
             <el-menu-item index="4">
               <i class="el-icon-setting"></i>
-              <span slot="title">导航四</span>
+              <span slot="title">艺术</span>
             </el-menu-item>
             <el-menu-item index="4">
               <i class="el-icon-setting"></i>
-              <span slot="title">导航四</span>
+              <span slot="title">家居</span>
             </el-menu-item>
             
           </el-menu>
@@ -145,7 +147,7 @@
         </el-row>
       </el-row>
     </el-row>
-
+  <p class="toolbar"></p>
   </el-row>
 </template>
 
@@ -186,6 +188,16 @@ export default {
     background-color: rgb(250, 250, 250);
     position: absolute;
     width: 100%;
+
+    .menu{
+      a{
+        text-decoration: none;
+        color: black;
+      }
+      a:visited{
+        color: black;
+      }
+    }
 
     .home__container{
       width: 1200px;

@@ -4,13 +4,6 @@
     <p class="toolbar"></p>
 
     <div class="book__container">
-        <div class="book__nav">
-            <el-breadcrumb separator="/">
-                <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
-                <el-breadcrumb-item><a href="/">分类1</a></el-breadcrumb-item>
-                <el-breadcrumb-item><a href="/">分类2</a></el-breadcrumb-item>
-            </el-breadcrumb>
-        </div>
 
         <el-row>
             <el-col :span="10">
@@ -24,35 +17,13 @@
                     <p>作者</p>
                     <p>所属分类</p>
                 </div>
+                <el-button type="danger">确认购买</el-button>
+                <el-button>取消订单</el-button>
             </el-col>
         </el-row>
-        <p class="toolbar"></p>
-        <el-row>
-          <h3>书籍简介</h3>
-            <el-col>
-                <p>中国共产党是中国工人阶级的先锋队，同时是中国人民和中华民族的先锋队，是中国特色社会主义事业的领导核心，代表中国先进生产力的发展要求，代表中国先进文化的前进方向，代表中国最广大人民的根本利益。党的最高理想和最终目标是实现共产主义。</p>
-            </el-col>
-        </el-row>
-        <p class="toolbar"></p>
-        <el-row>
-          <h3>商品评论</h3>
-            <el-col v-for="item in 6" :key="item">
-              <el-row>
-                <el-card shadow="hover" style="margin-bottom:20px;">
-                <el-col :span="6" >
-                  <p>木头勺子</p>
-                  <p>2018/7/15</p>
-                </el-col>
-                <p> 各界人士推荐的一本书，喜欢这句: 生活不能等待别人来安排，要自己去争取和奋斗；而不论其结果是喜是悲，但可以慰藉的是，你总不枉在这世界上活了一场。有了这样的认识，你就会珍重生活，而不会玩世不恭；同时，也会给人自身注入一种强大的内在力量。</p>
-                </el-card>
-              </el-row>
-            </el-col>
-        </el-row>
-        
     </div>
-    <p class="toolbar"></p>
-    
 
+    <p class="toolbar"></p>
   </el-row>
 </template>
 
